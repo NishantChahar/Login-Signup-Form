@@ -33,7 +33,7 @@ const Register = () => {
     
 
     const navigationHandler=()=>{
-      navigate("/login"); // Navigate to "/new-path"
+      navigate("/"); 
     };
   
 

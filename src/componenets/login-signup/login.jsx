@@ -33,9 +33,7 @@ const Login = () => {
   }
 
     const navigationHandler=()=>{
-  
-      navigate("/"); // Navigate to "/new-path"
-    
+      navigate("/register"); 
     };
 
 
