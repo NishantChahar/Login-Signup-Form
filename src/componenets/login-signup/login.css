@@ -87,6 +87,17 @@
     color: #b6bbb8;
     
 }
-.hidden-user{
-    display: none;
+.new_user_register_now{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -25px;
+    margin-bottom: 15px;
+}
+.login_now{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -25px;
+    margin-bottom: 15px;
 }
