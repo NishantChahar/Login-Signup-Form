@@ -41,6 +41,7 @@ const Login = () => {
   const regexloginEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   const loginhandle=(e)=>{
+    // navigate("/profile");
     console.log(e)
     const data1 ={email,password}
     if (email && password){
@@ -71,15 +72,39 @@ const Login = () => {
   }
   
   
-  const addApi1=(data1)=>{
-    fetch("http://localhost:8080/api/v1/user/login",{
-      method:"POST",
-      body:JSON.stringify(data1),
-      headers:{
-        "content-Type":"application/json"
-      }
-    });
+  // const addApi1=(data1)=>{
+  //   fetch("http://localhost:8080/api/v1/user/login",{
+  //     method:"POST",
+  //     body:JSON.stringify(data1),
+  //     headers:{
+  //       "content-Type":"application/json"
+  //     }
+  //   });
+  // };
+  const addApi1 = (data1) => {
+    fetch("http://localhost:8080/api/v1/user/login", {
+      method: "POST",
+      body: JSON.stringify(data1),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        console.log(response)     
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json(); // Parse the response body as JSON
+      })
+      .then((data) => {
+        console.log("API Response Data:", data);
+        navigate("/profile"); // Log the actual response data
+      })
+      .catch((error) => {
+        console.error("API Call Error:", error); // Handle errors
+      });
   };
+  
   
   return (
     <div className='container'>
